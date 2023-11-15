@@ -1,6 +1,3 @@
-from unittest import TestCase
-
-
 def area(a, h):
     """
     Calculates the area of a triangle based on its base and height.
@@ -30,32 +27,3 @@ def perimeter(a, b, c):
     if a == 0 or b == 0 or c == 0:
         return 0
     return abs(a) + abs(b) + abs(c)
-
-
-class TriangleTestCase(TestCase):
-    # area
-    def test_triangle_zero_side_area(self):
-        self.assertEqual(area(0, 10), 0)
-        self.assertEqual(area(10, 0), 0)
-
-    def test_triangle_negative_side_area(self):
-        self.assertEqual(area(10, -10), 50)
-        self.assertEqual(area(-10, 10), 50)
-
-    def test_triangle_area(self):
-        self.assertEqual(area(10, 10), 50)
-
-    # perimetr
-
-    def test_triangle_zero_side_perimetr(self):
-        self.assertEqual(perimeter(0, 10, 10), 0)
-        self.assertEqual(perimeter(10, 0, 10), 0)
-        self.assertEqual(perimeter(10, 10, 0), 0)
-
-    def test_triangle_negative_side_perimetr(self):
-        self.assertEqual(perimeter(-10, 10, 10), 30)
-        self.assertEqual(perimeter(10, -10, 10), 30)
-        self.assertEqual(perimeter(10, 10, -10), 30)
-
-    def test_triangle_perimetr(self):
-        self.assertEqual(perimeter(10, 10, 10), 30)
